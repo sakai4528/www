@@ -7,3 +7,412 @@
     <h2>ようこそ私のWEBサイトへ></ようこそ私のWEBサイトへ</h2>
   </body>
 </html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>セミナープレゼンテーション：新築住宅の品質を高める現場監督の視点</title>
+    <!-- Tailwind CSSの読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font "Inter" の読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Noto Sans JP と Inter をフォントファミリーとして設定 */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* スライドの基本スタイル */
+        .slide {
+            display: none; /* JavaScriptで制御するためにデフォルトは非表示 */
+            width: 100%;
+            height: 100%;
+            padding: 4rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem; /* rounded-xl */
+            background-color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* アクティブなスライドを表示 */
+        .slide.active {
+            display: flex;
+        }
+
+        /* スライド内の共通スタイル */
+        .slide h1 {
+            font-size: 3rem; /* text-5xl */
+            font-weight: 700; /* font-bold */
+            color: #111827; /* text-gray-900 */
+            margin-bottom: 1rem;
+        }
+        
+        .slide h2 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            color: #1f2937; /* text-gray-800 */
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid #3b82f6; /* border-blue-500 */
+            margin-bottom: 2rem;
+        }
+
+        .slide h3 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            color: #374151; /* text-gray-700 */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .slide ul {
+            list-style-type: disc;
+            padding-left: 2.5rem;
+            font-size: 1.25rem; /* text-xl */
+            line-height: 2; /* leading-relaxed */
+            color: #4b5563; /* text-gray-600 */
+        }
+        
+        .slide li {
+            margin-bottom: 0.75rem;
+        }
+
+        .slide strong {
+            color: #ef4444; /* text-red-500 */
+            font-weight: 700;
+        }
+
+        /* プレースホルダーのスタイル */
+        .placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 200px;
+            background-color: #f3f4f6; /* bg-gray-100 */
+            border: 2px dashed #9ca3af; /* border-gray-400 */
+            border-radius: 0.5rem; /* rounded-lg */
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            color: #6b7280; /* text-gray-500 */
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
+
+    <!-- メインのスライドコンテナ -->
+    <div id="slide-container" class="w-full max-w-6xl aspect-[16/9] relative">
+
+        <!-- スライド 1: タイトル -->
+        <div class="slide active">
+            <h1 class="text-center">新築住宅の品質を高める現場監督の視点</h1>
+            <p class="text-center text-2xl text-gray-700 mt-4">～結露・耐震・断熱・遮熱から学ぶ、若手監督が押えるべき一歩先の品質管理～</p>
+        </div>
+
+        <!-- スライド 2: 導入 (1) -->
+        <div class="slide">
+            <h2>1. 導入 (10分)</h2>
+            <h3>本日のゴール</h3>
+            <ul>
+                <li>なぜ「性能（結露・耐震・断熱・遮熱）」が重要か、施主目線で理解する。</li>
+                <li>現場で「やってしまいがちな施工ミス」とその「対策」を学ぶ。</li>
+                <li>経験5年未満の今だからこそ身につけたい「品質管理の意識」を明確にする。</li>
+            </ul>
+        </div>
+
+        <!-- スライド 3: 導入 (2) -->
+        <div class="slide">
+            <h2>1. 導入 (10分)</h2>
+            <h3>対象者</h3>
+            <ul>
+                <li>注文住宅会社の現場監督（経験5年未満）の皆様</li>
+            </ul>
+            <h3>なぜ今、若手監督が「性能」を学ぶのか？</h3>
+            <ul>
+                <li><strong>施主の目は肥えている</strong>：ネットでUa値、C値、耐震等級を調べてくる時代。</li>
+                <li><strong>「図面通り」がゴールではない</strong>：図面の意図（＝性能の確保）を理解することが重要。</li>
+                <li><strong>初期の施工不良は後で取り返せない</strong>：断熱欠損や金物施工ミスは、完成後は隠れてしまう。</li>
+                <li><strong>あなたの「一手間」が会社の信頼を作る</strong>：若手監督の品質意識が、会社のブランド価値に直結する。</li>
+            </ul>
+        </div>
+
+        <!-- スライド 4: 第1部 (1) 断熱・遮熱 (基礎) -->
+        <div class="slide">
+            <h2>2. 第1部：4大テーマ別・現場の注意点 (80分)</h2>
+            <h3>(1) 断熱・遮熱 (25分)</h3>
+            <ul>
+                <li><strong>断熱の基礎</strong>
+                    <ul>
+                        <li>なぜ断熱が必要か？（快適性、省エネ、ヒートショック防止）</li>
+                        <li>Ua値とは？（外皮平均熱貫流率）</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- スライド 5: 第1部 (1) 断熱・遮熱 (断熱チェックポイント) -->
+        <div class="slide">
+            <h2>(1) 断熱・遮熱 (続き)</h2>
+            <h3>現場のチェックポイント【断熱】</h3>
+            <div class="flex gap-4">
+                <div class="w-1/2">
+                    <div class="placeholder">[写真挿入：悪い施工例]<br>スカスカの充填、コンセント周りの隙間</div>
+                </div>
+                <div class="w-1/2">
+                    <div class="placeholder">[写真挿入：良い施工例]<br>隙間なく充填、気密テープ処理</div>
+                </div>
+            </div>
+            <ul>
+                <li><strong>監督の意識</strong>：「見えなくなる部分」こそ丁寧に。断熱材の「連続性」を意識する。</li>
+            </ul>
+        </div>
+
+        <!-- スライド 6: 第1部 (1) 断熱・遮熱 (遮熱基礎) -->
+        <div class="slide">
+            <h2>(1) 断熱・遮熱 (続き)</h2>
+            <h3>遮熱の基礎</h3>
+            <ul>
+                <li>なぜ遮熱が必要か？（夏の冷房負荷軽減）</li>
+                <li>日射取得と日射遮蔽（夏は遮蔽、冬は取得）</li>
+            </ul>
+        </div>
+
+        <!-- スライド 7: 第1部 (1) 断熱・遮熱 (遮熱チェックポイント) -->
+        <div class="slide">
+            <h2>(1) 断熱・遮熱 (続き)</h2>
+            <h3>現場のチェックポイント【遮熱】</h3>
+            <div class="placeholder">[図挿入：方位別の日射] 夏の南側、西側の対策</div>
+            <ul>
+                <li>窓の仕様確認（Low-Eガラスの種類、配置）</li>
+                <li>庇、アウターシェードの施工・提案タイミング</li>
+                <li><strong>監督の意識</strong>：図面上の「窓」を「日射の入口」として意識する。</li>
+            </ul>
+        </div>
+
+        <!-- スライド 8: 第1部 (2) 結露 (恐怖) -->
+        <div class="slide">
+            <h2>(2) 結露 (25分)</h2>
+            <h3>結露の恐怖（なぜ怖いか）</h3>
+            <div class="placeholder">[写真挿入：壁内結露によるカビ、腐朽]</div>
+            <ul>
+                <li>表面結露 vs 内部結露（壁内結露）</li>
+                <li>施主の健康被害（カビ、ダニ）と建物の耐久性低下</li>
+            </ul>
+        </div>
+
+        <!-- スライド 9: 第1部 (2) 結露 (メカニズム) -->
+        <div class="slide">
+            <h2>(2) 結露 (続き)</h2>
+            <h3>結露発生のメカニズム</h3>
+            <div class="placeholder">[図挿入：結露の仕組み] 温度差と水蒸気</div>
+        </div>
+
+        <!-- スライド 10: 第1部 (2) 結露 (チェックポイント) -->
+        <div class="slide">
+            <h2>(2) 結露 (続き)</h2>
+            <h3>現場のチェックポイント【結露対策】</h3>
+            <ul>
+                <li><strong>最重要：「断熱」「気密」「換気」はセット</strong></li>
+                <li>防湿・気密シートの「連続性」と「気密テープ処理」</li>
+            </ul>
+            <div class="placeholder">[写真挿入：気密シートの悪い施工] 破れ、コンセント周りの未処理</div>
+            <ul>
+                <li>24時間換気システムの機能確認（給気・排気経路の確保）</li>
+                <li><strong>監督の意識</strong>：「気密は息苦しい」は誤解。計画換気のために「隙間をなくす」意識を持つ。</li>
+            </ul>
+        </div>
+        
+        <!-- スライド 11: 第1部 (3) 耐震 (基礎) -->
+        <div class="slide">
+            <h2>(3) 耐震 (30分)</h2>
+            <h3>耐震の基礎</h3>
+            <ul>
+                <li>耐震等級1, 2, 3（等級3でも「積雪」考慮の有無等、中身が違う）</li>
+                <li>「耐震」と「制震」「免震」の違い（基礎知識）</li>
+            </ul>
+        </div>
+
+        <!-- スライド 12: 第1部 (3) 耐震 (チェックポイント1) -->
+        <div class="slide">
+            <h2>(3) 耐震 (続き)</h2>
+            <h3>現場のチェックポイント【耐震】</h3>
+            <ul>
+                <li><strong>図面との整合性（当たり前だが最も重要）</strong></li>
+                <li><strong>耐力壁</strong>：釘の種類（N50, N75等）、ピッチ（間隔）、めり込み過ぎ</li>
+            </ul>
+            <div class="placeholder">[写真挿入：釘のピッチ間違い、めり込み過ぎ]</div>
+        </div>
+        
+        <!-- スライド 13: 第1部 (3) 耐震 (チェックポイント2) -->
+        <div class="slide">
+            <h2>(3) 耐震 (続き)</h2>
+            <h3>現場のチェックポイント【耐震】</h3>
+            <ul>
+                <li><strong>金物</strong>：指定の金物か？ ビスの打ち忘れ、向き、座掘り</li>
+            </ul>
+            <div class="placeholder">[写真挿入：金物の施工不良（ビス不足、向き違い）]</div>
+            <ul>
+                <li><strong>アンカーボルト</strong>：位置、本数、緊結</li>
+                <li><strong>監督の意識</strong>：「これくらい良いだろう」が建物の強度を著しく下げる。構造検査は「合格」が目的ではなく「性能確保」が目的。</li>
+            </ul>
+        </div>
+
+        <!-- スライド 14: 第2部 (1) 図面の読み込み方 -->
+        <div class="slide">
+            <h2>3. 第2部：明日から意識すべきこと (25分)</h2>
+            <h3>(1) 図面の読み込み方を変える</h3>
+            <ul>
+                <li><strong>「仕様」だけ見るな、「納まり」を見よ</strong>
+                    <ul>
+                        <li>なぜこの納まりか？ 断熱ライン、気密ラインはどこか？</li>
+                        <li>職人さんに「なぜこう納めるか」を説明できるか？</li>
+                    </ul>
+                </li>
+                <li><strong>「分からない」を放置しない</strong>
+                    <ul>
+                        <li>設計者、先輩にすぐ確認する。経験が浅いのは「今だけ」の特権。</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- スライド 15: 第2部 (2) コミュニケーション -->
+        <div class="slide">
+            <h2>(2) 職人さんとのコミュニケーション</h2>
+            <ul>
+                <li><strong>「指示」ではなく「協力を仰ぐ」</strong>
+                    <ul>
+                        <li>「（性能のために）ここをこう納めたい」と意図を伝える。</li>
+                    </ul>
+                </li>
+                <li><strong>ベテラン職人の経験（技術）をリスペクトしつつ、新しい知識（性能）を共有する。</strong></li>
+            </ul>
+        </div>
+
+        <!-- スライド 16: 第2部 (3) 記録 -->
+        <div class="slide">
+            <h2>(3) 「記録」があなたを守る</h2>
+            <ul>
+                <li><strong>施工写真（隠ぺい部）の徹底</strong>
+                    <ul>
+                        <li>断熱材の充填状況、金物の取り付け状況、シートの処理…</li>
+                        <li>「正しく施工した」証拠を残す。</li>
+                        <li>（施主への安心材料、万が一の際のトレーサビリティ）</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- スライド 17: 第2部 (4) 意識 -->
+        <div class="slide">
+            <h2>(4) 「かもしれない」運転</h2>
+            <ul>
+                <li><strong>「このままだと結露するかもしれない」</strong></li>
+                <li><strong>「このピッチだと強度が足りないかもしれない」</strong></li>
+                <li>経験不足は「想像力」でカバーする。</li>
+            </ul>
+        </div>
+
+        <!-- スライド 18: まとめ -->
+        <div class="slide">
+            <h2>4. まとめ (5分)</h2>
+            <h3>まとめ</h3>
+            <ul>
+                <li>住宅性能（断熱・結露・耐震…）は、見えなくなる「現場」で決まる。</li>
+                <li>監督の「一歩先の意識」が、施主の「一生の安心」を作る。</li>
+                <li>ミスを恐れず、原理原則を学び続けよう。</li>
+            </ul>
+        </div>
+
+        <!-- スライド 19: 最終 -->
+        <div class="slide">
+            <h2 class="border-none text-center">ご清聴ありがとうございました</h2>
+            <h3 class="text-center mt-8">質疑応答</h3>
+        </div>
+
+    </div>
+
+    <!-- ナビゲーションボタン -->
+    <div class="flex justify-between w-full max-w-6xl mt-4">
+        <button id="prevBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+            前へ
+        </button>
+        <div id="slideCounter" class="text-gray-700 font-medium text-lg flex items-center">
+            1 / 19
+        </div>
+        <button id="nextBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+            次へ
+        </button>
+    </div>
+
+    <script>
+        // スライドショーのロジック
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slideCount = slides.length;
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideCounter = document.getElementById('slideCounter');
+
+        function showSlide(index) {
+            // すべてのスライドを非表示にする
+            slides.forEach((slide) => {
+                slide.classList.remove('active');
+            });
+
+            // 対象のスライドを表示する
+            if (slides[index]) {
+                slides[index].classList.add('active');
+            }
+
+            // カウンターを更新
+            slideCounter.textContent = `${index + 1} / ${slideCount}`;
+
+            // ボタンの状態を更新
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === slideCount - 1;
+        }
+
+        // 次へボタン
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slideCount - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        });
+
+        // 前へボタン
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        });
+
+        // キーボード操作（左右矢印）
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight' && currentSlide < slideCount - 1) {
+                // 次へ
+                currentSlide++;
+                showSlide(currentSlide);
+            } else if (event.key === 'ArrowLeft' && currentSlide > 0) {
+                // 前へ
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        });
+
+        // 初期スライドの表示
+        showSlide(currentSlide);
+    </script>
+
+</body>
+</html>
